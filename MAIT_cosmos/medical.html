@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Travel Health Check</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        /* background-color: #f0f0f0; */
+        background-image: url(./code_streak_orbitways-main/assets/images/download2.jpeg);
+        background-repeat: none;
+      }
+      h1 {
+        text-align: center;
+        margin-top: 20px;
+        color: antiquewhite;
+      }
+      form {
+        max-width: 500px;
+        margin: 20px auto;
+        /* background-color: #fff; */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(239, 234, 234, 0.1);
+        backdrop-filter: blur(10px) saturate(180%) ;
+        color: antiquewhite;
+        
+      }
+      label {
+        font-weight: bold;
+      }
+      input[type="text"],
+      input[type="number"],
+      textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ede7e7;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      textarea {
+        resize: vertical;
+        height: 100px;
+      }
+      input[type="submit"] {
+        background-color: palevioletred;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      input[type="submit"]:hover {
+        background-color: plum;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Space Travel Health Check</h1>
+    <form id="healthCheckForm">
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required />
+
+      <label for="weight">Weight (in kg):</label>
+      <input type="number" id="weight" name="weight" required />
+
+      <label for="height">Height (in cm):</label>
+      <input type="number" id="height" name="height" required />
+
+      <label for="bloodPressure">Blood Pressure (in mmHg):</label>
+      <input type="text" id="bloodPressure" name="bloodPressure" required />
+
+      <label for="heartRate">Heart Rate (in beats per minute):</label>
+      <input type="number" id="heartRate" name="heartRate" required />
+
+      <label for="oxygenLevel">Oxygen Level (%):</label>
+      <input type="number" id="oxygenLevel" name="oxygenLevel" required />
+
+      <label for="healthConditions">Any Existing Health Conditions:</label
+      ><br />
+      <textarea
+        id="healthConditions"
+        name="healthConditions"
+        rows="4"
+        cols="50"
+      ></textarea>
+
+      <input type="submit" value="Submit" />
+    </form>
+
+    <script>
+      document
+        .getElementById("healthCheckForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the form from submitting normally
+
+          // Fetch the values from the form fields
+          const age = document.getElementById("age").value;
+          const weight = document.getElementById("weight").value;
+          const height = document.getElementById("height").value;
+          const bloodPressure = document.getElementById("bloodPressure").value;
+          const heartRate = document.getElementById("heartRate").value;
+          const oxygenLevel = document.getElementById("oxygenLevel").value;
+          const healthConditions =
+            document.getElementById("healthConditions").value;
+
+          // You can add further validation or processing of the form data here
+
+          // For demonstration purposes, you can log the data to the console
+          console.log("Age:", age);
+          console.log("Weight:", weight);
+          console.log("Height:", height);
+          console.log("Blood Pressure:", bloodPressure);
+          console.log("Heart Rate:", heartRate);
+          console.log("Oxygen Level:", oxygenLevel);
+          console.log("Health Conditions:", healthConditions);
+
+          // You can also submit the form data to a server using AJAX or fetch
+
+          // Optionally, redirect the user to another page after form submission
+          // window.location.href = 'thank-you.html';
+        });
+    </script>
+  </body>
+</html>
